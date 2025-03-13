@@ -1,4 +1,4 @@
-## [0.1.0] - 2025-03-13
+## [0.0.1] - 2025-03-13
 
 - Initial release of `dio_speed_tracker`.
 - Added `NetworkSpeedController` to track average download speed in Mbps.
