@@ -24,7 +24,11 @@ class NetworkSpeedController {
   final List<double> speedResults = [];
 
   /// Constructor for [NetworkSpeedController].
-  NetworkSpeedController({this.maxSpeedSamples = 10, this.minResultsToCheck = 5, this.poorConnectionThreshold = 2.0});
+  NetworkSpeedController({
+    this.maxSpeedSamples = 10,
+    this.minResultsToCheck = 5,
+    this.poorConnectionThreshold = 2.0,
+  });
 
   /// Adds a new speed measurement to the tracker.
   /// Triggers a poor connection check if there are enough samples.

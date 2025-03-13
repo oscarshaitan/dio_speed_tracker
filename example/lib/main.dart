@@ -82,7 +82,8 @@ class _MyAppState extends State<MyApp> {
       );
       if (_speedController.speedResults.length >= 4) {
         setState(() {
-          _statusMessage = "✅ Download complete. ${_speedController.speedResults}";
+          _statusMessage =
+              "✅ Download complete. ${_speedController.speedResults}";
         });
       }
     } catch (e) {

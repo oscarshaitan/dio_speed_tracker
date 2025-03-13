@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:collection/collection.dart';
 import 'package:dio/dio.dart';
 
 import 'network_speed_controller.dart';
@@ -35,13 +32,16 @@ class SpeedInterceptor extends Interceptor {
         stopwatch.start();
       }
       // When download completes and is large enough, calculate speed.
-      if (stopwatch.isRunning && received == total && total >= minTrackableSize) {
+      if (stopwatch.isRunning &&
+          received == total &&
+          total >= minTrackableSize) {
         stopwatch.stop();
 
         // Only calculate speed if duration meets the minimum requirement.
         if (stopwatch.elapsed.compareTo(minDuration) >= 1) {
           final seconds = stopwatch.elapsed.inMilliseconds / 1000;
-          final mbps = ((total / 1024) / 1024) / seconds * 8; // Convert bytes to Mbps
+          final mbps =
+              ((total / 1024) / 1024) / seconds * 8; // Convert bytes to Mbps
 
           // Add the calculated speed to the tracker.
           speedTracker.addSpeed(mbps);
