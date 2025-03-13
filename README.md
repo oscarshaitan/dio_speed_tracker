@@ -46,11 +46,11 @@ final speedController = NetworkSpeedController(
 final dio = Dio();
 
 dio.interceptors.add(
-SpeedInterceptor(
-speedController,
-minTrackableSize: 10 * 1024, // 10 KB
-minDuration: Duration(milliseconds: 20),
-),
+  SpeedInterceptor(
+  speedController,
+  minTrackableSize: 10 * 1024, // 10 KB
+  minDuration: Duration(milliseconds: 20),
+  ),
 );
 ```
 
@@ -60,10 +60,10 @@ minDuration: Duration(milliseconds: 20),
 
 ```dart
 speedController.stream.listen((status) {
-if (status == NetworkStatus.poor) {
-print("🚨 Poor connection detected!");
-// Optionally show a UI warning or fallback
-}
+  if (status == NetworkStatus.poor) {
+    print("🚨 Poor connection detected!");
+    // Optionally show a UI warning or fallback
+  }
 });
 ```
 

@@ -20,6 +20,22 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    final speedController = NetworkSpeedController(
+      maxSpeedSamples: 10,
+      minResultsToCheck: 5,
+      poorConnectionThreshold: 2.0, // Mbps
+    );
+
+    final dio = Dio();
+
+    dio.interceptors.add(
+      SpeedInterceptor(
+        speedController,
+        minTrackableSize: 10 * 1024, // 10 KB
+        minDuration: Duration(milliseconds: 20),
+      ),
+    );
+
     super.initState();
 
     _speedController = NetworkSpeedController(
@@ -82,8 +98,7 @@ class _MyAppState extends State<MyApp> {
       );
       if (_speedController.speedResults.length >= 4) {
         setState(() {
-          _statusMessage =
-              "✅ Download complete. ${_speedController.speedResults}";
+          _statusMessage = "✅ Download complete. ${_speedController.speedResults}";
         });
       }
     } catch (e) {
