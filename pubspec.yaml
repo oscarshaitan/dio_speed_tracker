@@ -1,6 +1,6 @@
 name: dio_speed_tracker
 description: "A lightweight and extensible Dio interceptor for monitoring real-world network speed in Mbps, based on actual HTTP download performance"
-version: 0.0.3
+version: 0.0.4
 
 homepage: https://github.com/oscarshaitan/dio_speed_tracker
 repository: https://github.com/oscarshaitan/dio_speed_tracker

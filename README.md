@@ -25,9 +25,7 @@ Add this to your `pubspec.yaml`:
 dependencies:
   dio: ^5.0.0
   collection: ^1.17.2
-  dio_speed_tracker:
-    git:
-      url: https://github.com/your-username/dio_speed_tracker.git
+  dio_speed_tracker: ^0.0.3
 ```
 
 ---
