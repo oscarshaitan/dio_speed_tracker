@@ -1,6 +1,6 @@
 name: dio_speed_tracker
-description: "A lightweight and extensible Dio interceptor for monitoring real-world network speed in Mbps, based on actual HTTP download performance. Emits NetworkStatus.poor when the average speed drops below a customizable threshold. Unlike custom_ping, this works in restricted environments without requiring ICMP (ping) support."
-version: 0.0.2
+description: "A lightweight and extensible Dio interceptor for monitoring real-world network speed in Mbps, based on actual HTTP download performance"
+version: 0.0.3
 
 homepage: https://github.com/oscarshaitan/dio_speed_tracker
 repository: https://github.com/oscarshaitan/dio_speed_tracker
